@@ -1,0 +1,12 @@
+containers:
+  build-env:
+    image: adoptopenjdk:8u272-b10-jdk-hotspot-focal
+    run_as_current_user:
+      enabled: true
+      home_directory: /home/container-user
+tasks:
+  shell:
+    description: Start a shell in the development environment
+    run:
+      container: build-env
+      command: bash
